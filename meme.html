@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Uncatchable Running No Button Meme</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 400px;
+      height: 200px;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      margin: 10px;
+      font-size: 20px;
+      padding: 10px 20px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Cancelar Reunião?</h2>
+    <button id="yesButton">Sim</button>
+    <button id="noButton">Não</button>
+  </div>
+
+  <script>
+    const noButton = document.getElementById('noButton');
+    noButton.addEventListener('mouseenter', runAwayNoButton);
+
+    function runAwayNoButton() {
+      const containerWidth = document.querySelector('.container').offsetWidth - 100;
+      const containerHeight = document.querySelector('.container').offsetHeight - 50;
+
+      const randomX = Math.floor(Math.random() * containerWidth);
+      const randomY = Math.floor(Math.random() * containerHeight);
+
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+    }
+  </script>
+</body>
+</html>
